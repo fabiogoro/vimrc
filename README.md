@@ -5,7 +5,7 @@ My vim config file
 Clone it as:
 
 ```
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim'
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim
 ```
 
 Then open vim and run:
