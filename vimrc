@@ -17,23 +17,6 @@ filetype plugin indent on
 " Setting shortcuts
 let mapleader = ","
 let g:mapleader = ","
-nmap <leader>s :w!<cr>
-nmap <leader>l :tabn<cr>
-nmap <leader>h :tabp<cr>
-nmap <leader>o :tabe<space>
-nmap <leader>q :q<cr>
-nmap <leader>f /
-nmap <leader>d *
-nmap <leader>a <C-n>
-inoremap CC <Esc>C
-inoremap SS <Esc>S
-inoremap DD <Esc>dd
-inoremap UU <Esc>u
-inoremap II <Esc>I
-inoremap AA <Esc>A
-inoremap OO <Esc>o
-inoremap YY <Esc>yy
-inoremap PP <Esc>p
 
 " Searching
 set ignorecase
