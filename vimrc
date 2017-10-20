@@ -3,20 +3,25 @@ set nocompatible
 filetype off 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'Vundle.vim'
 Plugin 'crusoexia/vim-monokai'
-Plugin 'pangloss/vim-javascript'
-Plugin 'Raimondi/delimitMate'
-Plugin 'scrooloose/nerdTree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'raimondi/delimitmate'
 Plugin 'ervandew/supertab'
-Plugin 'JamshedVesuna/vim-markdown-preview'
 call vundle#end()
 filetype plugin indent on 
 
 " Setting shortcuts
-let mapleader = ","
-let g:mapleader = ","
+nmap F <Plug>(easymotion-F)
+nmap f <Plug>(easymotion-f)
+nmap w <Plug>(easymotion-bd-w)
+nmap l <Plug>(easymotion-lineforward)
+nmap h <Plug>(easymotion-linebackward)
+nmap j <Plug>(easymotion-j)
+nmap k <Plug>(easymotion-k)
+nmap L <Plug>(easymotion-eol-bd-jk)
+nmap H <Plug>(easymotion-sol-bd-jk)
 
 " Searching
 set ignorecase
@@ -64,5 +69,3 @@ autocmd BufReadPost *
 set viminfo^=%
 
 set laststatus=2
-
-autocmd VimEnter * NERDTree
