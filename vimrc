@@ -4,24 +4,28 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'Vundle.vim'
+Plugin 'pangloss/vim-javascript'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'raimondi/delimitmate'
 Plugin 'ervandew/supertab'
+Plugin 'kien/ctrlp.vim'
 call vundle#end()
 filetype plugin indent on 
 
+set clipboard=unnamedplus
+
 " Setting shortcuts
+nmap <CR> :
+imap <C-c> <Esc>
 nmap F <Plug>(easymotion-F)
 nmap f <Plug>(easymotion-f)
 nmap w <Plug>(easymotion-bd-w)
-nmap l <Plug>(easymotion-lineforward)
-nmap h <Plug>(easymotion-linebackward)
-nmap j <Plug>(easymotion-j)
-nmap k <Plug>(easymotion-k)
-nmap L <Plug>(easymotion-eol-bd-jk)
-nmap H <Plug>(easymotion-sol-bd-jk)
+nmap l :bnext<cr>
+nmap h :bprevious<cr>
+nmap k :bdelete<cr>
+nmap j <C-p>
 
 " Searching
 set ignorecase
