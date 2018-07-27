@@ -23,8 +23,11 @@ nmap F <Plug>(easymotion-F)
 nmap f <Plug>(easymotion-f)
 nmap w <Plug>(easymotion-bd-w)
 nmap l :bnext<cr>
-nmap h :bprevious<cr>
+nmap L :vs<cr>
+nmap H :vs<cr>
 nmap k :bdelete<cr>
+nmap K :sp<cr>
+nmap J :sp<cr>
 nmap j <C-p>
 
 " Searching
