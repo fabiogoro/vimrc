@@ -19,10 +19,15 @@ set clipboard=unnamedplus
 " Setting shortcuts
 nmap <CR> :
 imap <C-c> <Esc>
+vmap <C-t> <S->>
+vmap <C-d> <S-<>
+nmap <C-t> i<C-t>
+nmap <C-d> i<C-d>
 nmap F <Plug>(easymotion-F)
 nmap f <Plug>(easymotion-f)
 nmap w <Plug>(easymotion-bd-w)
 nmap l :bnext<cr>
+nmap h :bprev<cr>
 nmap L :vs<cr>
 nmap H :vs<cr>
 nmap k :bdelete<cr>
@@ -51,7 +56,7 @@ set history=50
 set tabstop=2 
 set softtabstop=2 
 set expandtab 
-set shiftwidth=2 
+set shiftwidth=2
 set smarttab
 set mouse=a
 set autoindent
@@ -76,3 +81,12 @@ autocmd BufReadPost *
 set viminfo^=%
 
 set laststatus=2
+
+
+" Go to last file if invoked without arguments.
+autocmd VimEnter * nested if
+  \ argc() == 0 &&
+  \ bufname("%") == "" &&
+  \ bufname("2" + 0) != "" |
+  \   exe "normal! `0" |
+  \ endif
