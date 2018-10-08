@@ -18,6 +18,8 @@ set clipboard=unnamedplus
 
 " Setting shortcuts
 nmap <CR> :
+nmap \ :CtrlPLine<CR>
+nmap / :CtrlPLine<CR>
 imap <C-c> <Esc>
 vmap <C-t> <S->>
 vmap <C-d> <S-<>
@@ -53,8 +55,8 @@ let g:monokai_italic = 1
 
 " Setting default config
 set history=50
-set tabstop=2 
-set softtabstop=2 
+set tabstop=2
+set softtabstop=2
 set expandtab 
 set shiftwidth=2
 set smarttab
