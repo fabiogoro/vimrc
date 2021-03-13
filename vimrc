@@ -18,8 +18,6 @@ set clipboard=unnamedplus
 
 " Setting shortcuts
 nmap <CR> :
-nmap \ :CtrlPLine<CR>
-nmap / :CtrlPLine<CR>
 imap <C-c> <Esc>
 vmap <C-t> <S->>
 vmap <C-d> <S-<>
