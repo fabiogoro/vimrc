@@ -11,6 +11,13 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'raimondi/delimitmate'
 Plugin 'ervandew/supertab'
 Plugin 'kien/ctrlp.vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'AndrewRadev/tagalong.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'dense-analysis/ale'
+Plugin 'MaxMEllon/vim-jsx-pretty'
+Plugin 'leafgarland/typescript-vim'
 call vundle#end()
 filetype plugin indent on 
 
@@ -34,6 +41,10 @@ nmap k :bdelete<cr>
 nmap K :sp<cr>
 nmap J :sp<cr>
 nmap j <C-p>
+imap <C-@> <C-y>,
+
+let b:ale_fixers = ['prettier']
+let g:ale_fix_on_save = 1
 
 " Searching
 set ignorecase
@@ -75,9 +86,9 @@ set rnu
 
 " Remember position when closing file, go back there when opening
 autocmd BufReadPost *
-\ if line("'\"") > 0 && line("'\"") <= line("$") |
-\   exe "normal! g`\"" |
-\ endif
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal! g`\"" |
+      \ endif
 set viminfo^=%
 
 set laststatus=2
@@ -85,8 +96,24 @@ set laststatus=2
 
 " Go to last file if invoked without arguments.
 autocmd VimEnter * nested if
-  \ argc() == 0 &&
-  \ bufname("%") == "" &&
-  \ bufname("2" + 0) != "" |
-  \   exe "normal! `0" |
-  \ endif
+      \ argc() == 0 &&
+      \ bufname("%") == "" &&
+      \ bufname("2" + 0) != "" |
+      \   exe "normal! `0" |
+      \ endif
+
+let g:tagalong_verbose = 1
+let g:ale_fixers = {
+      \ 'html': ['prettier','fecs','html-beautify','tidy'],
+      \ 'css': ['stylelint'],
+      \}
+let g:ale_linters = {
+      \ 'html': ['htmlhint'],
+      \ 'css': ['stylelint']
+      \}
+let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 1
+
+let g:typescript_compiler_binary = 'npm run tsc'
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
